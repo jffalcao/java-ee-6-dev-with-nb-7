@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<jsp:useBean id="surveyData" scope="request" class="com.ensode.nbbook.model.SurveyData" />
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,14 +14,15 @@
     </head>
     <body>
         <h2>Thank you for taking our survey!</h2>
-        <p><%=request.getParameter("fullName") %>,
-           You indicated you are familiar with the following
-           programming languages:
+        <p>
+            <jsp:getProperty name="surveyData" property="fullName" />
         </p>
+        
+        
         <ul>
                 <% 
                     String[] selectedLanguages = 
-                            request.getParameterValues("progLang");
+                            surveyData.GetProgLangList();
                     if(selectedLanguages != null){
                         for(int i=0; i< selectedLanguages.length; i++) {
                  %>

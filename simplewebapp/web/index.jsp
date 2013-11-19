@@ -14,12 +14,13 @@
     <body>
         <h1>Welcome to the Developer Survey</h1>
         <p>Please indicate with which programming language you are familiar with.</p>
-        <form action="output.jsp">
+        <!-- <form action="output.jsp"> -->
+        <form action="ControllerServlet" method="post">
             <table border="0">
                 <tbody>
                     <tr>
                         <td>Full Name:</td>
-                        <td><input type="text" name="FullName" value="" /></td>
+                        <td><input type="text" name="fullName" value="" /></td>
                     </tr>
                     <tr>
                         <td>Java</td>

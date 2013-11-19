@@ -12,6 +12,23 @@
         <title>Thank You!</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h2>Thank you for taking our survey!</h2>
+        <p><%=request.getParameter("fullName") %>,
+           You indicated you are familiar with the following
+           programming languages:
+        </p>
+        <ul>
+                <% 
+                    String[] selectedLanguages = 
+                            request.getParameterValues("progLang");
+                    if(selectedLanguages != null){
+                        for(int i=0; i< selectedLanguages.length; i++) {
+                 %>
+                        <li><%= selectedLanguages[i] %></li>
+                        <%}
+                    }%>
+                        
+        </ul>
+                   
     </body>
 </html>

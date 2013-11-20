@@ -50,8 +50,8 @@ public class ControllerServlet extends HttpServlet {
         */
         
         SurveyData surveyData = new SurveyData();
-        surveyData.SetFullName(request.getParameter("fullName"));
-        surveyData.SetProgLangList(request.getParameterValues("progLang"));
+        surveyData.setFullName(request.getParameter("fullName"));
+        surveyData.setProgLangList(request.getParameterValues("progLang"));
         request.setAttribute("surveyData", surveyData);
         
         request.getRequestDispatcher("output.jsp").forward(request, response);
